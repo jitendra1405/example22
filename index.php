@@ -11,7 +11,7 @@
    else 
    {
      echo "Database connection success.";
-	   $query = "insert into contact.contact(FirstName) values('Ravindra Nath')";
+	   $query = "select FirstName from contact.contact";
     $result = pg_query($con,$query);
     echo $result;
 	
