@@ -1,5 +1,5 @@
 <?php
-$dbconn = pg_connect("host=ec2-50-19-124-157.compute-1.amazonaws.com port=5432 dbname=d58o173hbaukt7 user=nfltllotkrgbnc password=6501404a979c7d7bb1da09c71cd54a6b83fb4986354072611d25bf3c0f0287e0");
+$dbconn = pg_connect("host=ec2-54-83-192-245.compute-1.amazonaws.com port=5432 dbname=d1v08e1131dl3s user=lcxoevwjufwdds password=421891cb21108eeac80d70cebf134fd37484a798916eec41f33d973cd1a03cf9");
 
 echo
 "<form action='' method='post'>
