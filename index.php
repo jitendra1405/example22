@@ -8,7 +8,7 @@ Name: <input type='text' name='name'/>
 
 if(isset($_POST['use_button']))
 {
-	echo "hey";
+	echo $name;
 }
 
 ?>
