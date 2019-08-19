@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <body>
-    Name: <input type="text" name="name">
-	</body>
+
+   
+	
 <?php
 
 "<form action='' method='post'>
+ Name: <input type="text" name="name">
 <input type='submit' name='use_button' value='something' />
 </form>";
 
@@ -22,4 +21,3 @@ if(isset($_POST['use_button']))
 }
 
 ?>
-</html>
