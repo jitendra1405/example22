@@ -17,11 +17,6 @@ class DB_Connect
       return $db;
     }
 }
-$db1 = new DB_Connect();
-    $conn = $db1->connect();
 
-    $query = "insert into contact.contact(FirstName) values('Ravindra Nath')";
-    $result = pg_query($conn,$query);
-    echo $result;
 	
 ?>
