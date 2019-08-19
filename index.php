@@ -7,7 +7,7 @@ $dbname = "de4bcai2dahkqm";
 $port = "5432";
 
 // Create connection
-$conn = new mysqli($host, $user, $password, $dbname, $port);
+$conn = new mysqli($host, $user, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -17,12 +17,10 @@ $sql = "select FirstName from contact.contact";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<table><tr><th>ID</th><th>Name</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["id"]."</td><td>".$row["firstname"]." ".$row["lastname"]."</td></tr>";
+        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
     }
-    echo "</table>";
 } else {
     echo "0 results";
 }
