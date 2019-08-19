@@ -11,6 +11,7 @@
    else 
    {
      echo "Database connection success.";
+     echo $con;	   
 	$sql = "select FirstName from contact.contact";
 
                             $resultset = pg_query($con, $sql);
