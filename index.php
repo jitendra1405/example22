@@ -15,14 +15,7 @@
 	$sql = "select FirstName from contact.contact";
 
                             $resultset = pg_query($con, $sql);
-                            while($row = pg_fetch_array($resultset)) {
-                                echo '<tr>
-                                        <td>'.$row[0].'</td>
-                                        
-                                    </tr>'; 
-                            }
-
-                            pg_close($con);
+                            echo $resultset;
    }
     
 ?>
