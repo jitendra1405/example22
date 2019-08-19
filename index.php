@@ -3,15 +3,7 @@ $dbconn = pg_connect("host=ec2-50-19-124-157.compute-1.amazonaws.com port=5432 d
 
 $sql = "INSERT into contact.contact (FirstName) values ('AAAAAAAAAAAAAAAAFFrrooo')" ;
                 pg_query($dbconn, $sql); 
-$sql = "select name from contact.contact";
 
-                            $resultset = pg_query($dbconn, $sql);
-                            while($row = pg_fetch_array($resultset)) {
-                                echo '<tr>
-                                        <td>'.$row[0].'</td>
-                                        
-                                    </tr>'; 
-                            }
 
                             pg_close($dbconn);
 ?>
