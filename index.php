@@ -3,14 +3,19 @@ $dbconn = pg_connect("host=ec2-50-19-124-157.compute-1.amazonaws.com port=5432 d
 
 echo
 "<form action='' method='post'>
+
+First Name: <input type='text' name='name'/><br/>
+Last Name: <input type='text' name='lname'/><br/>
+Email: <input type='text' name='email'/><br/>
 <input type='submit' name='use_button' value='something' />
-Name: <input type='text' name='name'/>
 </form>";
 
 if(isset($_POST['use_button']))
 {
 	$x=$_POST['name'];
-	$sql = "INSERT into contact.contact (FirstName) values ('".$x."')" ;
+	$y=$_POST['lname'];
+	$z=$_POST['email'];
+	$sql = "INSERT into contact.contact (FirstName,LastName,Email) values ('".$x."','".$y."','".$z."')" ;
                 pg_query($dbconn, $sql); 
 }
 pg_close($dbconn);
