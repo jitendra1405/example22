@@ -9,6 +9,7 @@ Name: <input type='text' name='name'/>
 if(isset($_POST['use_button']))
 {
 	$x=$_POST['name'];
+	echo $x;
 }
 
 ?>
