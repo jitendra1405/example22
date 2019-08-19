@@ -11,10 +11,11 @@
    else 
    {
      echo "Database connection success.";
-   }
-    $query = "insert into contact.contact(FirstName) values('Ravindra Nath')";
+	   $query = "insert into contact.contact(FirstName) values('Ravindra Nath')";
     $result = pg_query($con,$query);
     echo $result;
 	
+   }
+    
 ?>
 	
