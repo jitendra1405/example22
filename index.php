@@ -17,6 +17,8 @@ class DB_Connect
       return $db;
     }
 }
+$db1 = new DB_Connect();
+$conn = $db1->connect();
 
 	
 ?>
