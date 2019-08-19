@@ -1,36 +1,15 @@
 <?php
-$host = "ec2-174-129-227-80.compute-1.amazonaws.com";
-$user = "hqolsipojtnecl";
-$password = "64306f4dd68d73a8a477652e710ede2520086af42fc9e2dca049f2eb1debfab6";
-$dbname = "de4bcai2dahkqm";
-$port = "5432";
-
-try{
-  //Set DSN data source name
-    $dsn = "pgsql:host=" . $host . ";port=" . $port .";dbname=" . $dbname . ";user=" . $user . ";password=" . $password . ";";
-
-
-  //create a pdo instance
-  $pdo = new PDO($dsn, $user, $password);
-  $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
-  $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
-  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-echo 'Connection failed: ' . $e->getMessage();
-}
-
+$dbconn = pg_connect("host=ec2-50-19-124-157.compute-1.amazonaws.com port=5432 dbname=d58o173hbaukt7 user=nfltllotkrgbnc password=6501404a979c7d7bb1da09c71cd54a6b83fb4986354072611d25bf3c0f0287e0");
 
 $sql = "select FirstName from contact.contact";
-$result = $pdp->query($sql);
 
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-    }
-} else {
-    echo "0 results";
-}
-$conn->close();
+                            $resultset = pg_query($dbconn, $sql);
+                            while($row = pg_fetch_array($resultset)) {
+                                echo '<tr>
+                                        <td>'.$row[0].'</td>
+                                        
+                                    </tr>'; 
+                            }
+
+                            pg_close($dbconn);
 ?>
